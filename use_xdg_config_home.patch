@@ -1,8 +1,8 @@
 diff --git a/src/paths.c b/src/paths.c
-index 7548115..e22cd51 100644
+index 7548115..bd2637a 100644
 --- a/src/paths.c
 +++ b/src/paths.c
-@@ -240,44 +240,10 @@ static void Paths_InitHomeDirs(void)
+@@ -240,44 +240,9 @@ static void Paths_InitHomeDirs(void)
  	{
  		/* $HOME not set, so let's use current working dir as home */
  		sUserHomeDir = Str_Dup(sWorkingDir);
@@ -45,7 +45,6 @@ index 7548115..e22cd51 100644
 -		strcpy(sHatariHomeDir, sUserHomeDir);
 -	}
 +	sHatariHomeDir = Str_Dup(getenv("XDG_CONFIG_HOME"));
-+	printf("home dir: %s\n", sHatariHomeDir);
  }
  
  
