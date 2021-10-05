@@ -27,6 +27,7 @@ Hatari is also able to emulate the additional hardware of the TT or Falcon machi
 	<content_rating type="oars-1.0" />
 
 	<releases>
+		<release date="2021-10-06" version="2.3.1-1" />
 		<release date="2021-04-07" version="2.3.1" />
 	</releases>
 </component>
