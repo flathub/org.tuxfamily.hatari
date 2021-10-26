@@ -22,9 +22,9 @@ cleanup:
 modules:
   - name: hatari
     sources:
-      - type: archive
-        url: http://download.tuxfamily.org/hatari/2.3.1/hatari-2.3.1.tar.bz2
-        sha256: 44a2f62ca995e38d9e0874806956f0b9c3cc84ea89e0169a63849b63cd3b64bd
+      - type: git
+        url: https://git.tuxfamily.org/hatari/hatari.git/
+        commit: e8e3472d2bac5b3f930019efb12591194e24faaf
       - type: patch
         path: use_xdg_config_home.patch
     buildsystem: cmake-ninja
@@ -57,4 +57,13 @@ modules:
       - install -Dm644 org.tuxfamily.hatari.svg /app/share/icons/hicolor/scalable/apps/org.tuxfamily.hatari.svg
       - install -Dm644 org.tuxfamily.hatari.desktop /app/share/applications/org.tuxfamily.hatari.desktop
       - install -Dm644 org.tuxfamily.hatari.appdata.xml /app/share/appdata/org.tuxfamily.hatari.appdata.xml
+  
+  - name: tos
+    sources:
+      - type: file
+        path: tos.img
+    buildsystem: simple
+    build-commands:
+      - install -Dm444 tos.img /app/share/hatari/tos.img
+      
 
