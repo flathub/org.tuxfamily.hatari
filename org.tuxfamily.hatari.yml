@@ -22,9 +22,9 @@ cleanup:
 modules:
   - name: hatari
     sources:
-      - type: git
-        url: https://git.tuxfamily.org/hatari/hatari.git/
-        commit: e8e3472d2bac5b3f930019efb12591194e24faaf
+      - type: archive
+        url: https://git.tuxfamily.org/hatari/hatari.git/snapshot/hatari-e8e3472d2bac5b3f930019efb12591194e24faaf.tar.gz
+        sha256: 78a91f8239d99bb083c79c498a6dc20e940e0fa0c249d6f555a59dd777f16135
       - type: patch
         path: use_xdg_config_home.patch
     buildsystem: cmake-ninja
