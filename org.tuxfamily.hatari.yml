@@ -23,8 +23,8 @@ modules:
   - name: hatari
     sources:
       - type: archive
-        url: https://git.tuxfamily.org/hatari/hatari.git/snapshot/hatari-6a86f054cc560a858bbe60c7529dafe2cf6ec604.tar.gz
-        sha256: bcb5d2e3bf3a3f8b34d21565354aa8eb085e3d92eb466c5d28e42e2022e7da3d
+        url: https://download.tuxfamily.org/hatari/2.4.0/hatari-2.4.0.tar.bz2
+        sha256: 3e481b08c45cb65d3423157c4e912b458cb72941ff52478362f9abd791cb1ed7
       - type: patch
         path: use_xdg_config_home.patch
     buildsystem: cmake-ninja
