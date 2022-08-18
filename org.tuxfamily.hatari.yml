@@ -63,8 +63,14 @@ modules:
     sources:
       - type: file
         path: tos.img
+      - type: file
+        path: etos256us.img
+      - type: file
+        path: etos512us.img
+      - type: file
+        path: etos1024us.img
     buildsystem: simple
     build-commands:
-      - install -Dm444 tos.img /app/share/hatari/tos.img
+      - install -Dm444 *.img /app/share/hatari/
       
 
