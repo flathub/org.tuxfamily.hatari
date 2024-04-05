@@ -23,9 +23,9 @@ cleanup:
 modules:
   - name: hatari
     sources:
-      - type: archive
-        url: https://download.tuxfamily.org/hatari/2.4.1/hatari-2.4.1.tar.bz2
-        sha256: 2a5da1932804167141de4bee6c1c5d8d53030260fe7fe7e31e5e71a4c00e0547
+      - type: git
+        url: https://github.com/hatari/hatari.git
+        tag: v2.4.1
       - type: patch
         path: use_xdg_config_home.patch
     buildsystem: cmake-ninja
