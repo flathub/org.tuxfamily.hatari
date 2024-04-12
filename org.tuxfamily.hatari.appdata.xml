@@ -23,7 +23,11 @@
 			like the Videl video chip or the DSP 56001. However, note that TT and Falcon support are
 			currently still in development and experimental.</p>
 	</description>
-
+	<screenshots>
+		<screenshot type="default">
+			<image>https://github.com/flathub/org.tuxfamily.hatari/blob/newbuild/org.tuxfamily.hatari-497100f35f9b2f089f6b5ecaeb77b23d.png</image>
+		</screenshot>
+	</screenshots>
 	<launchable type="desktop-id">
 		org.tuxfamily.hatari.desktop
 	</launchable>
