@@ -23,24 +23,24 @@
 			like the Videl video chip or the DSP 56001. However, note that TT and Falcon support are
 			currently still in development and experimental.</p>
 	</description>
+  <screenshots>
+    <screenshot type="default">
+      <image>https://hatari.tuxfamily.org/screens/features/deskhigh.png</image>
+    </screenshot>
+    <screenshot>
+      <image>https://hatari.tuxfamily.org/screens/falcon/willie.png</image>
+    </screenshot>
+  </screenshots>
 
 	<launchable type="desktop-id">
 		org.tuxfamily.hatari.desktop
 	</launchable>
 
-	<url type="homepage">https://hatari.tuxfamily.org</url>
+	<url type="homepage">https://hatari.tuxfamily.org<</url>
 	<project_license>GPL-2.0+</project_license>
 	<developer id="org.tuxfamily.hatari">
 		<name>The Hatari Developers</name>
 	</developer>
-	<screenshots>
-		<screenshot type="default">
-			<image>https://hatari.tuxfamily.org/screens/features/deskhigh.png</image>
-		</screenshot>
-		<screenshot>
-			<image>https://hatari.tuxfamily.org/screens/falcon/willie.png</image>
-		</screenshot>
-	</screenshots>
 
 	<content_rating type="oars-1.0" />
 
