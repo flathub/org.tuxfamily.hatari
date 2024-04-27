@@ -36,7 +36,7 @@
 		org.tuxfamily.hatari.desktop
 	</launchable>
 
-	<url type="homepage">https://hatari.tuxfamily.org<</url>
+	<url type="homepage">https://hatari.tuxfamily.org</url>
 	<project_license>GPL-2.0+</project_license>
 	<developer id="org.tuxfamily.hatari">
 		<name>The Hatari Developers</name>
