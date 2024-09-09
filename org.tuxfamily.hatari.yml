@@ -13,6 +13,8 @@ finish-args:
   - --filesystem=xdg-download
 
 cleanup:
+  - org.tuxfamily.hatari.application-x-st-disk-image.png
+  - org.tuxfamily.hatari.application-x-st-disk-image.svg
   - hatari.desktop
   - hatariui.desktop
   - /include
@@ -30,6 +32,8 @@ modules:
         tag: v2.5.0
       - type: patch
         path: use_xdg_config_home.patch
+      - type: patch
+        path: rename-files.patch
     buildsystem: cmake-ninja
     
     modules:

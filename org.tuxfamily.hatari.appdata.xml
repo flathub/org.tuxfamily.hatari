@@ -26,9 +26,11 @@
   <screenshots>
     <screenshot type="default">
       <image>https://hatari.tuxfamily.org/screens/features/deskhigh.png</image>
+      <caption>Hatari</caption>
     </screenshot>
     <screenshot>
       <image>https://hatari.tuxfamily.org/screens/falcon/willie.png</image>
+      <caption>Hatari running Willie's Adventures</caption>
     </screenshot>
   </screenshots>
 
