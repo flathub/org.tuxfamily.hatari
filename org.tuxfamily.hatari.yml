@@ -13,6 +13,8 @@ finish-args:
   - --filesystem=xdg-download
 
 cleanup:
+  - hatari.desktop
+  - hatariui.desktop
   - /include
   - '*.la'
   - '*.a'
