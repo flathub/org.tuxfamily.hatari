@@ -26,9 +26,11 @@
   <screenshots>
     <screenshot type="default">
       <image>https://hatari.tuxfamily.org/screens/features/deskhigh.png</image>
+      <caption>Hatari</caption>
     </screenshot>
     <screenshot>
       <image>https://hatari.tuxfamily.org/screens/falcon/willie.png</image>
+      <caption>Hatari running Willie's Adventures</caption>
     </screenshot>
   </screenshots>
 
@@ -45,6 +47,7 @@
 	<content_rating type="oars-1.0" />
 
 	<releases>
+		<release date="2024-09-09" version="2.5-0" />
 		<release date="2024-04-28" version="2.5-0" />
 		<release date="2024-04-05" version="2.4.1-2" />
 		<release date="2022-09-26" version="2.4.1-1" />
