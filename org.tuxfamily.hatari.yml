@@ -1,8 +1,7 @@
 app-id: org.tuxfamily.hatari
 runtime: org.freedesktop.Platform
-runtime-version: '24.08'
+runtime-version: '25.08'
 sdk: org.freedesktop.Sdk
-
 command: hatari
 finish-args:
   - --socket=wayland
@@ -11,47 +10,57 @@ finish-args:
   - --share=ipc
   - --device=all
   - --filesystem=xdg-download
-
 cleanup:
-  - org.tuxfamily.hatari.application-x-st-disk-image.png
-  - org.tuxfamily.hatari.application-x-st-disk-image.svg
-  - hatari.desktop
-  - hatariui.desktop
   - /include
-  - '*.la'
-  - '*.a'
-  - share/doc
-  - share/man
-  - share/info
-
+  - /lib/cmake
+  - /lib/pkgconfig
+  - /share/doc
+  - /share/man
 modules:
   - name: hatari
+    buildsystem: cmake-ninja
+    post-install:
+      - install -Dm644 gpl.txt -t ${FLATPAK_DEST}/share/licenses/${FLATPAK_ID}/hatari/
+    cleanup:
+      - hatari.desktop
+      - '*.application-x-st-disk-image.*'
     sources:
       - type: git
         url: https://github.com/hatari/hatari.git
         tag: v2.5.0
+        commit: 0961469284cc9b45ce066e89de5dd82df786c57b
       - type: patch
         path: use_xdg_config_home.patch
       - type: patch
         path: rename-files.patch
-    buildsystem: cmake-ninja
-    
+
     modules:
       - name: portaudio
+        buildsystem: cmake-ninja
+        config-opts:
+          - -DCMAKE_POLICY_VERSION_MINIMUM=3.5
         sources:
           - type: git
             url: https://github.com/PortAudio/portaudio.git
             tag: v19.7.0
-        buildsystem: cmake-ninja
+            commit: 147dd722548358763a8b649b3e4b41dfffbcfbb6
 
       - name: capsimage
+        buildsystem: cmake-ninja
+        config-opts:
+          - -DCMAKE_POLICY_VERSION_MINIMUM=3.5
         sources:
           - type: git
             url: https://github.com/simonowen/capsimage
             tag: 5.1
-        buildsystem: cmake-ninja
+            commit: cd790da49cced3e0b0a6eec7ab52ee24f45a28b2
 
   - name: desktop
+    buildsystem: simple
+    build-commands:
+      - install -Dm644 ${FLATPAK_ID}.svg -t /app/share/icons/hicolor/scalable/apps/
+      - install -Dm644 ${FLATPAK_ID}.desktop -t /app/share/applications/
+      - install -Dm644 ${FLATPAK_ID}.appdata.xml -t /app/share/appdata/
     sources:
       - type: file
         path: org.tuxfamily.hatari.desktop
@@ -59,13 +68,11 @@ modules:
         path: org.tuxfamily.hatari.svg
       - type: file
         path: org.tuxfamily.hatari.appdata.xml
+
+  - name: tos
     buildsystem: simple
     build-commands:
-      - install -Dm644 org.tuxfamily.hatari.svg /app/share/icons/hicolor/scalable/apps/org.tuxfamily.hatari.svg
-      - install -Dm644 org.tuxfamily.hatari.desktop /app/share/applications/org.tuxfamily.hatari.desktop
-      - install -Dm644 org.tuxfamily.hatari.appdata.xml /app/share/appdata/org.tuxfamily.hatari.appdata.xml
-  
-  - name: tos
+      - install -Dm444 *.img /app/share/hatari/
     sources:
       - type: file
         path: tos.img
@@ -75,8 +82,3 @@ modules:
         path: etos512us.img
       - type: file
         path: etos1024us.img
-    buildsystem: simple
-    build-commands:
-      - install -Dm444 *.img /app/share/hatari/
-      
-
